@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f7f3">
+<title>Salas · demo</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><main>
+<nav class="top"><span class="brand">Salas</span><span class="chip" title="Datos ficticios. Las reservas se guardan solo en este navegador y no avisan a nadie.">Demo · datos ficticios</span></nav>
+
+<section id="home" hidden>
+  <h1>¿Qué sala?</h1>
+  <p class="lead">Con una pegatina en la puerta, el móvil abre directamente la sala. Aquí puedes elegirla a mano.</p>
+  <p id="unknown" class="notice" hidden></p>
+  <div id="list" class="rooms"></div>
+</section>
+
+<section id="room" hidden>
+  <a class="back" href="./">← Salas</a>
+  <div class="head"><span class="icon" id="icon"></span><div><h1 id="name"></h1><p id="meta" class="lead"></p></div></div>
+  <div class="status" id="status" role="status"></div>
+  <button id="now" class="primary">Reservar ahora</button>
+  <p id="msg" class="msg" role="alert"></p>
+
+  <h2>Hoy y próximos días</h2>
+  <div class="days" id="days"></div>
+  <ul id="agenda" class="agenda"></ul>
+
+  <details id="booking">
+    <summary>Reservar otro día u otra hora</summary>
+    <form id="form">
+      <label>Nombre del organizador<input id="who" maxlength="30" placeholder="Tu nombre (ficticio)"></label>
+      <div class="two">
+        <label>Inicio<select id="start"></select></label>
+        <label>Duración<select id="dur"><option value="30">30 min</option><option value="60" selected>1 h</option><option value="90">1 h 30</option><option value="120">2 h</option></select></label>
+      </div>
+      <button type="submit" class="primary">Reservar el día elegido</button>
+    </form>
+  </details>
+</section>
+
+<details class="nfc">
+  <summary>Leer pegatina desde esta página</summary>
+  <p class="small">Solo con una pegatina ya grabada con la URL de una sala y un móvil compatible (Chrome en Android para este botón). En iPhone, basta con acercar el móvil a la pegatina.</p>
+  <button id="scan" class="ghost">Escanear con NFC</button>
+  <p id="scanmsg" class="small"></p>
+</details>
+<p class="foot">Demo con datos ficticios. Las reservas se guardan solo en este navegador y no se comparten ni avisan a nadie.</p>
+</main><script src="app.js"></script></body></html>
